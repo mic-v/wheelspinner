@@ -1,0 +1,148 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&family=IBM+Plex+Sans+Condensed&display=swap');
+
+:root {
+    --radius: 600px;
+    --half-radius: calc(var(--radius) / 4);
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#wheel {
+    display: flex;
+    flex-direction: row;
+
+    position: relative;
+    width: 1000px;
+    height: 600px;
+
+    margin: 1rem auto;
+}
+
+#spinner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--radius);
+    width: var(--radius);
+
+    transition: transform 15s cubic-bezier(0.075, 0.820, 0.165, 1.000);
+    border-radius: 50%;
+
+    list-style: none;
+
+
+    /*
+    animation-name: rotate;
+    animation-duration: 30s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    */
+
+
+    z-index: 100;
+}
+
+#spinner li {
+    position: absolute;
+    font-size: 2rem;
+    filter: invert(1) grayscale(1);
+    mix-blend-mode: difference;
+    height: 25%;
+    width: 50%;
+    /*
+    padding: 0 calc(var(--half-radius) / 6) 0 calc(var(--half-radius) / 20);
+    /**
+    top: calc(var(--half-radius) / 2);
+    left: calc(calc(var(--radius) / 2) - calc(var(--half-radius) / 2)); */
+}
+
+.rotate {
+
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+#ticker {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 25px solid black;
+    border-bottom: 10px solid transparent;
+    align-self: center;
+
+    margin-left: -10px;
+
+    z-index: 101;
+}
+
+#button {
+    align-self: center;
+    margin: 10px;
+    padding: 10px 20px;
+
+    text-transform: uppercase;
+}
+
+#winscreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+
+    z-index: 200;
+
+    background-color: rgba(0, 0, 0, 0.90);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+
+    z-index: -200;
+
+    color: white;
+
+    background-color: rgba(0, 0, 0, 0.90); 
+
+    opacity: -100;
+}   
+
+
+#winbox {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 25vw;
+    height: 200px;
+
+    border-radius: 10px;
+
+    background-color: rgb(23, 0, 126);
+}
