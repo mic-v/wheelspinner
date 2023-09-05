@@ -99,6 +99,7 @@ function determineWinner(rotationOffset, rotationList) {
 
     const spinnerList = document.getElementById('spinner').getElementsByTagName('li');
 
+    
     return spinnerList[winnerPos].innerText;
 
 }
