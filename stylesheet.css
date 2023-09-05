@@ -21,6 +21,7 @@ body {
 #wheel {
     display: flex;
     flex-direction: row;
+    align-items: center;
 
     position: relative;
     width: 1000px;
@@ -96,7 +97,7 @@ body {
     z-index: 101;
 }
 
-#button {
+#spin {
     align-self: center;
     margin: 10px;
     padding: 10px 20px;
